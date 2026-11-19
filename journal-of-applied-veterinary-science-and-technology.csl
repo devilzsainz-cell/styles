@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-US" initialize-with-hyphen="false" demote-non-dropping-particle="never">
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" initialize-with-hyphen="false" demote-non-dropping-particle="never" default-locale="en-US">
   <info>
-    <title>Journal of Applied Veterinary Science and Technology (JAVEST) — Vancouver</title>
-    <title-short>JAVEST — Vancouver</title-short>
+    <title>Journal of Applied Veterinary Science and Technology (JAVEST) &#8212; Vancouver</title>
+    <title-short>JAVEST &#8212; Vancouver</title-short>
     <id>http://www.zotero.org/styles/journal-of-applied-veterinary-science-and-technology</id>
     <link href="http://www.zotero.org/styles/journal-of-applied-veterinary-science-and-technology" rel="self"/>
     <link href="https://e-journal.unair.ac.id/JAVEST/Citation_Style" rel="documentation"/>
