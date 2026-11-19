@@ -5,55 +5,111 @@
     <title-short>JAVEST — Vancouver</title-short>
     <id>http://www.zotero.org/styles/journal-of-applied-veterinary-science-and-technology</id>
     <link href="http://www.zotero.org/styles/journal-of-applied-veterinary-science-and-technology" rel="self"/>
-    <link href="https://e-journal.unair.ac.id/JAVEST" rel="documentation"/>
-    <link href="https://www.ncbi.nlm.nih.gov/books/NBK7256/" rel="template"/>
-    <author><name>JAVEST Editorial Team</name></author>
+    <link href="https://e-journal.unair.ac.id/JAVEST/Citation_Style" rel="documentation"/>
+    <author>
+      <name>JAVEST Editorial Team</name>
+    </author>
     <category citation-format="numeric"/>
     <category field="medicine"/>
-    <summary>Modified numeric Vancouver style for JAVEST. Bracketed citations, six authors then et al., surname and punctuated initials, English and, full italic journal titles, volume(issue), DOI URLs.</summary>
-    <updated>2026-10-09T00:00:00+00:00</updated>
-    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This CSL style is distributed under CC BY-SA 3.0, as used by the CSL style repository.</rights>
+    <issn>2716-1188</issn>
+    <eissn>2716-117X</eissn>
+    <summary>Custom numeric Vancouver style for Journal of Applied Veterinary Science and Technology. Square-bracket citations, six authors followed by et al. for more than six authors, surname and punctuated initials, English and, full italic journal titles, volume(issue), and DOI URLs.</summary>
+    <updated>2026-11-19T00:00:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en-US">
     <terms>
       <term name="and">and</term>
       <term name="et-al">et al.</term>
-      <term name="editor" form="short"><single>editor</single><multiple>editors</multiple></term>
-      <term name="page" form="short"><single>p.</single><multiple>p.</multiple></term>
+      <term name="editor" form="short">
+        <single>editor</single>
+        <multiple>editors</multiple>
+      </term>
+      <term name="page" form="short">
+        <single>p.</single>
+        <multiple>p.</multiple>
+      </term>
     </terms>
   </locale>
   <macro name="authors">
     <choose>
       <if variable="author">
-        <names variable="author"><name name-as-sort-order="all" sort-separator=", " initialize-with="." delimiter=", " and="text" delimiter-precedes-last="always" et-al-min="7" et-al-use-first="6" delimiter-precedes-et-al="always"/><et-al font-style="italic"/></names>
+        <names variable="author">
+          <name name-as-sort-order="all" sort-separator=", " initialize-with="." delimiter=", " and="text" delimiter-precedes-last="always" et-al-min="7" et-al-use-first="6" delimiter-precedes-et-al="always"/>
+          <et-al font-style="italic"/>
+        </names>
       </if>
       <else-if variable="editor">
-        <names variable="editor"><name name-as-sort-order="all" sort-separator=", " initialize-with="." delimiter=", " and="text" delimiter-precedes-last="always" et-al-min="7" et-al-use-first="6" delimiter-precedes-et-al="always"/><label form="long" prefix=", "/></names>
+        <names variable="editor">
+          <name name-as-sort-order="all" sort-separator=", " initialize-with="." delimiter=", " and="text" delimiter-precedes-last="always" et-al-min="7" et-al-use-first="6" delimiter-precedes-et-al="always"/>
+          <label form="long" prefix=", "/>
+        </names>
       </else-if>
-      <else-if variable="publisher"><text variable="publisher"/></else-if>
+      <else-if variable="publisher">
+        <text variable="publisher"/>
+      </else-if>
     </choose>
   </macro>
   <macro name="editors">
-    <names variable="editor"><name name-as-sort-order="all" sort-separator=", " initialize-with="." delimiter=", " and="text" delimiter-precedes-last="always" et-al-min="7" et-al-use-first="6" delimiter-precedes-et-al="always"/><label form="long" prefix=", "/></names>
+    <names variable="editor">
+      <name name-as-sort-order="all" sort-separator=", " initialize-with="." delimiter=", " and="text" delimiter-precedes-last="always" et-al-min="7" et-al-use-first="6" delimiter-precedes-et-al="always"/>
+      <label form="long" prefix=", "/>
+    </names>
   </macro>
-  <macro name="year"><date variable="issued"><date-part name="year"/></date></macro>
-  <macro name="full-date"><date variable="issued" form="text" date-parts="year-month-day"/></macro>
-  <macro name="access-date"><choose><if variable="accessed"><date variable="accessed" prefix="[cited " suffix="]"><date-part name="year"/><date-part name="month" form="short" prefix=" "/><date-part name="day" prefix=" "/></date></if></choose></macro>
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <macro name="full-date">
+    <date variable="issued" form="text" date-parts="year-month-day"/>
+  </macro>
+  <macro name="access-date">
+    <choose>
+      <if variable="accessed">
+        <date variable="accessed" prefix="[cited " suffix="]">
+          <date-part name="year"/>
+          <date-part name="month" form="short" prefix=" "/>
+          <date-part name="day" prefix=" "/>
+        </date>
+      </if>
+    </choose>
+  </macro>
   <macro name="doi-url">
     <choose>
-      <if variable="DOI"><text variable="DOI" prefix="https://doi.org/"/></if>
-      <else-if variable="URL"><text variable="URL"/></else-if>
+      <if variable="DOI">
+        <text variable="DOI" prefix="https://doi.org/"/>
+      </if>
+      <else-if variable="URL">
+        <text variable="URL"/>
+      </else-if>
     </choose>
   </macro>
   <macro name="web-link">
     <choose>
-      <if variable="DOI"><text variable="DOI" prefix="https://doi.org/"/></if>
-      <else-if variable="URL"><text variable="URL" prefix="Available from: "/></else-if>
+      <if variable="DOI">
+        <text variable="DOI" prefix="https://doi.org/"/>
+      </if>
+      <else-if variable="URL">
+        <text variable="URL" prefix="Available from: "/>
+      </else-if>
     </choose>
   </macro>
-  <macro name="edition"><choose><if variable="edition"><number variable="edition" form="ordinal" suffix=" ed."/></if></choose></macro>
+  <macro name="edition">
+    <choose>
+      <if variable="edition">
+        <number variable="edition" form="ordinal" suffix=" ed."/>
+      </if>
+    </choose>
+  </macro>
   <macro name="place-publisher-year">
-    <group delimiter=""><group delimiter=": "><text variable="publisher-place"/><text variable="publisher"/></group><text macro="year" prefix="; "/></group>
+    <group delimiter="">
+      <group delimiter=": ">
+        <text variable="publisher-place"/>
+        <text variable="publisher"/>
+      </group>
+      <text macro="year" prefix="; "/>
+    </group>
   </macro>
   <macro name="volume-issue-pages">
     <group delimiter="">
@@ -67,7 +123,12 @@
       <text macro="authors"/>
       <text variable="title"/>
       <text variable="container-title" font-style="italic"/>
-      <group delimiter=""><text macro="year"/><group delimiter="" prefix=";"><text macro="volume-issue-pages"/></group></group>
+      <group delimiter="">
+        <text macro="year"/>
+        <group delimiter="" prefix=";">
+          <text macro="volume-issue-pages"/>
+        </group>
+      </group>
       <text macro="doi-url"/>
     </group>
   </macro>
@@ -84,7 +145,10 @@
     <group delimiter=". ">
       <text macro="authors"/>
       <text variable="title"/>
-      <group delimiter=""><text value="In: "/><text macro="editors"/></group>
+      <group delimiter="">
+        <text value="In: "/>
+        <text macro="editors"/>
+      </group>
       <text variable="container-title" font-style="italic"/>
       <text macro="edition"/>
       <text macro="place-publisher-year"/>
@@ -95,7 +159,17 @@
   <macro name="thesis">
     <group delimiter=". ">
       <text macro="authors"/>
-      <group delimiter=" "><text variable="title" font-style="italic"/><choose><if variable="genre"><text variable="genre" prefix="[" suffix="]"/></if><else><text value="[thesis]"/></else></choose></group>
+      <group delimiter=" ">
+        <text variable="title" font-style="italic"/>
+        <choose>
+          <if variable="genre">
+            <text variable="genre" prefix="[" suffix="]"/>
+          </if>
+          <else>
+            <text value="[thesis]"/>
+          </else>
+        </choose>
+      </group>
       <text macro="place-publisher-year"/>
       <text macro="web-link"/>
     </group>
@@ -104,7 +178,10 @@
     <group delimiter=". ">
       <text macro="authors"/>
       <text variable="title"/>
-      <group delimiter=""><text value="In: "/><text variable="container-title" font-style="italic"/></group>
+      <group delimiter="">
+        <text value="In: "/>
+        <text variable="container-title" font-style="italic"/>
+      </group>
       <text variable="event"/>
       <text variable="event-place"/>
       <text macro="place-publisher-year"/>
@@ -117,14 +194,20 @@
       <text macro="authors"/>
       <text variable="title" font-style="italic"/>
       <text macro="place-publisher-year"/>
-      <group delimiter=" "><text variable="genre"/><text variable="number" prefix="No. "/></group>
+      <group delimiter=" ">
+        <text variable="genre"/>
+        <text variable="number" prefix="No. "/>
+      </group>
       <text macro="web-link"/>
     </group>
   </macro>
   <macro name="webpage">
     <group delimiter=". ">
       <text macro="authors"/>
-      <group delimiter=" "><text variable="title"/><text value="[Internet]"/></group>
+      <group delimiter=" ">
+        <text variable="title"/>
+        <text value="[Internet]"/>
+      </group>
       <text variable="container-title" font-style="italic"/>
       <text macro="place-publisher-year"/>
       <text macro="access-date"/>
@@ -134,7 +217,17 @@
   <macro name="dataset-software">
     <group delimiter=". ">
       <text macro="authors"/>
-      <group delimiter=" "><text variable="title" font-style="italic"/><choose><if type="dataset"><text value="[dataset]"/></if><else><text value="[software]"/></else></choose></group>
+      <group delimiter=" ">
+        <text variable="title" font-style="italic"/>
+        <choose>
+          <if type="dataset">
+            <text value="[dataset]"/>
+          </if>
+          <else>
+            <text value="[software]"/>
+          </else>
+        </choose>
+      </group>
       <text variable="version" prefix="Version "/>
       <text variable="publisher"/>
       <text macro="year"/>
@@ -162,23 +255,47 @@
     </group>
   </macro>
   <citation collapse="citation-number" cite-group-delimiter=",">
-    <sort><key variable="citation-number"/></sort>
-    <layout prefix="[" suffix="]" delimiter=","><text variable="citation-number"/></layout>
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout prefix="[" suffix="]" delimiter=",">
+      <text variable="citation-number"/>
+    </layout>
   </citation>
   <bibliography et-al-min="7" et-al-use-first="6" second-field-align="flush" entry-spacing="0" line-spacing="1">
     <layout suffix=".">
       <text variable="citation-number" suffix=". "/>
       <choose>
-        <if type="article-journal article" match="any"><text macro="journal"/></if>
-        <else-if type="chapter entry-encyclopedia entry-dictionary" match="any"><text macro="chapter"/></else-if>
-        <else-if type="book" ><text macro="book"/></else-if>
-        <else-if type="paper-conference"><text macro="conference"/></else-if>
-        <else-if type="thesis"><text macro="thesis"/></else-if>
-        <else-if type="report standard" match="any"><text macro="report"/></else-if>
-        <else-if type="webpage post post-weblog" match="any"><text macro="webpage"/></else-if>
-        <else-if type="dataset software" match="any"><text macro="dataset-software"/></else-if>
-        <else-if type="patent"><text macro="patent"/></else-if>
-        <else><text macro="generic"/></else>
+        <if type="article-journal article" match="any">
+          <text macro="journal"/>
+        </if>
+        <else-if type="chapter entry-encyclopedia entry-dictionary" match="any">
+          <text macro="chapter"/>
+        </else-if>
+        <else-if type="book">
+          <text macro="book"/>
+        </else-if>
+        <else-if type="paper-conference">
+          <text macro="conference"/>
+        </else-if>
+        <else-if type="thesis">
+          <text macro="thesis"/>
+        </else-if>
+        <else-if type="report standard" match="any">
+          <text macro="report"/>
+        </else-if>
+        <else-if type="webpage post post-weblog" match="any">
+          <text macro="webpage"/>
+        </else-if>
+        <else-if type="dataset software" match="any">
+          <text macro="dataset-software"/>
+        </else-if>
+        <else-if type="patent">
+          <text macro="patent"/>
+        </else-if>
+        <else>
+          <text macro="generic"/>
+        </else>
       </choose>
     </layout>
   </bibliography>
